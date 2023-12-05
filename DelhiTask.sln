@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelhiTask", "DelhiTask.csproj", "{EAAF8423-728B-4FEF-A085-0079C7E9A22A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EAAF8423-728B-4FEF-A085-0079C7E9A22A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAAF8423-728B-4FEF-A085-0079C7E9A22A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAAF8423-728B-4FEF-A085-0079C7E9A22A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAAF8423-728B-4FEF-A085-0079C7E9A22A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A6E2122A-26B7-4D24-8CC5-3905359BD8F0}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,98 @@
+﻿@using DelhiTask.Entities;
+<!-- Search.cshtml -->
+@model DelhiTask.Models.ProductSearchModel
+<div class="container">
+    <h1 class="text-center bg-info">Search Products</h1>
+    <form id="searchForm" method="post" asp-action="Search">
+        <label class="form-label"><b>Product Name</b></label>
+        <input class="form-control" asp-for="ProductName" />
+
+        <label class="form-label"><b>Size</b></label>
+        <input class="form-control" asp-for="Size" />
+
+        <label class="form-label"><b>Price</b></label>
+        <input class="form-control" asp-for="Price" />
+
+        <label class="form-label"><b>Manufacturing Date</b></label>
+        <input class="form-control" asp-for="MfgDate" type="date" />
+
+        <label class="form-label"><b>Category</b></label>
+        <input class="form-control" asp-for="Category" />
+
+        <label class="form-label"><b>Conjection</b></label>
+        <select class="form-control" asp-for="Conjunction">
+            <option value="AND">AND</option>
+            <option value="OR">OR</option>
+        </select><br />
+        
+        <button class="btn btn-success col-2"  type="submit">Search</button>
+        <a asp-action="search" asp-controller="product" class="btn btn-warning col-2" onClick="resetForm('searchForm')">Reset</a>
+    </form>
+    <br /><br />
+
+    <!-- Display search results here -->
+    @if (ViewBag.Results != null && ViewBag.Results.Count > 0)
+    {   
+        <h1 class="text-success">Searched Products</h1>
+        <table class="table table-striped">
+            <thead class="bg-black text-white">
+                <tr>
+                    <th>Product Name</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Manufacturing Date</th>
+                    <th>Category</th>
+                </tr>
+            </thead>
+            <tbody class="bg-info">
+                @foreach (Product product in ViewBag.Results)
+                {
+                    <tr>
+                        <td>@product.ProductName</td>
+                        <td>@product.Size</td>
+                        <td>@product.Price</td>
+                        <td>@product.MfgDate</td>
+                        <td>@product.Category</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No searched Product.</p>
+    }
+    <br />
+
+    <h1 class="text-secondary">All Products</h1>
+    <table class="table table-striped">
+        <thead class="bg-warning">
+            <tr>
+                <th>Product Name</th>
+                <th>Size</th>
+                <th>Price</th>
+                <th>Manufacturing Date</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody class="bg-info">
+            @foreach (Product product in ViewBag.products)
+            {
+                <tr>
+                    <td>@product.ProductName</td>
+                    <td>@product.Size</td>
+                    <td>@product.Price</td>
+                    <td>@product.MfgDate</td>
+                    <td>@product.Category</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script>
+    function resetForm(formId) {
+        document.getElementById(formId).reset();
+    }
+    document.body.style.backgroundColor='lightgreen'
+</script>
+
